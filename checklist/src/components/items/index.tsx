@@ -6,7 +6,7 @@ import { ItemsContainer } from "./components";
 const Items = () => {
   const todos = useAppSelector((state) => state.todos.toDos);
   return (
-    <ItemsContainer>
+    <ItemsContainer data-testid="checklistItemsContainer">
       {todos.map((todo, index) => (
         <Item
           key={`${todo.text}-${todo.id}`}

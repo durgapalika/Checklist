@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IToDoState, ToDo } from "../models";
+/* istanbul ignore else */
 
 const initialState: IToDoState = {
   toDos: [],

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given Header components StyledText Should render correctly 1`] = `
+<DocumentFragment>
+  <h3
+    class="MuiTypography-root MuiTypography-h3 css-1t3wodr-MuiTypography-root"
+    data-testid="headerText"
+  >
+    My checklist
+  </h3>
+</DocumentFragment>
+`;

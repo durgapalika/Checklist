@@ -25,18 +25,13 @@ const Item = ({ index, item, disableUp, disableDown }: ItemProps) => {
   const [value, setValue] = useState<string>(text);
   const dispatch = useAppDispatch();
 
-  const updateItem = (
-    e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-  ) => {
-    const inputValue = e.target.value;
-    setValue(inputValue);
-  };
   return (
-    <ItemContainer>
+    <ItemContainer data-testid={`checklistItem-${index}`}>
       <StyledCheckbox
         onClick={() => {
           dispatch(toggleTodo({ id }));
         }}
+        data-testid={`checkbox-${index}`}
       />
 
       <StyledInput
@@ -45,6 +40,7 @@ const Item = ({ index, item, disableUp, disableDown }: ItemProps) => {
         color="info"
         placeholder="New task..."
         onChange={(e) => setValue(e.target.value)}
+        data-testid={`checklistItem-text-${index}`}
         onBlur={() => {
           dispatch(updateTodo({ ...item, text: value }));
         }}
@@ -55,6 +51,7 @@ const Item = ({ index, item, disableUp, disableDown }: ItemProps) => {
           dispatch(moveTodoUp(index));
         }}
         disabled={disableUp}
+        data-testid={`btnMoveUp-${index}`}
       >
         <KeyboardArrowUpIcon />
       </IconButton>
@@ -64,6 +61,7 @@ const Item = ({ index, item, disableUp, disableDown }: ItemProps) => {
           dispatch(moveTodoDown(index));
         }}
         disabled={disableDown}
+        data-testid={`btnMoveDown-${index}`}
       >
         <KeyboardArrowDownIcon />
       </IconButton>
@@ -72,6 +70,7 @@ const Item = ({ index, item, disableUp, disableDown }: ItemProps) => {
         onClick={() => {
           dispatch(removeTodo({ id }));
         }}
+        data-testid={`btnDelete-${index}`}
       >
         <DeleteIcon />
       </IconButton>

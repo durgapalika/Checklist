@@ -9,11 +9,15 @@ const Footer = () => {
   const dispatch = useAppDispatch();
   return (
     <FooterContainer>
-      <StyledText variant="h6">{`Completed ${completed} of ${total}`}</StyledText>
+      <StyledText
+        variant="h6"
+        data-testid="status-text"
+      >{`Completed ${completed} of ${total}`}</StyledText>
       <Button
         onClick={() => dispatch(addTodo())}
         color="primary"
         variant="contained"
+        data-testid="btnAddItem"
       >
         <AddIcon /> <span>Add Item</span>
       </Button>
