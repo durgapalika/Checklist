@@ -1,4 +1,4 @@
-import { Checkbox, TextField, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { ItemContainer, StyledCheckbox, StyledInput } from "./components";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -11,7 +11,7 @@ import {
   updateTodo,
 } from "../../ducks/todoSlice";
 import { useAppDispatch } from "../../store";
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import { ToDo } from "../../models";
 
 interface ItemProps {
@@ -32,6 +32,7 @@ const Item = ({ index, item, disableUp, disableDown }: ItemProps) => {
           dispatch(toggleTodo({ id }));
         }}
         data-testid={`checkbox-${index}`}
+        checked={completed}
       />
 
       <StyledInput

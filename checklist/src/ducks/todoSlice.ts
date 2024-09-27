@@ -41,6 +41,7 @@ const todosSlice = createSlice({
         todo.text = text;
         todo.description = description;
       }
+      updateCounts(state);
     },
     toggleTodo(state, action: PayloadAction<Pick<ToDo, "id">>) {
       const todo = state.toDos.find((todo) => todo.id === action.payload.id);

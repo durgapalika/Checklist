@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useAppSelector } from "../../store";
 import Item from "../item";
 import { ItemsContainer } from "./components";
