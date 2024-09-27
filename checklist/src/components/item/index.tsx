@@ -26,7 +26,7 @@ const Item = ({ index, item, disableUp, disableDown }: ItemProps) => {
   const dispatch = useAppDispatch();
 
   return (
-    <ItemContainer data-testid={`checklistItem-${index}`}>
+    <ItemContainer data-testid={`checklistItem-container-${index}`}>
       <StyledCheckbox
         onClick={() => {
           dispatch(toggleTodo({ id }));
